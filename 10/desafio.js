@@ -11,56 +11,49 @@ Escreva um algoritmo que leia uma matriz M(5,5) e mostre o que se pede:
 
 const input = require('prompt-sync')({sigint:true})
 
-let linhas1 = []
-let linhas2 = []
-let linhas3 = []
-let linhas4 = []
-let linhas5 = []
-let count = 0
+let matriz = []
+let linhas = 5
+let colunas = 5
+let linhaParaSomar = 3
+let colunaParaSomar = 1
 
-/* Cria uma matrix 5x5 vazia */
-let matriz = Array.from(Array(5), () => new Array(5)) 
-console.log(matriz)
-/* Guarda a linha atual da matriz */
-let linha = 1
-
-function setLinhas(linhas) {
-	for(i = 0; i < 5; i++) {
-		const linhaInput = Number(input(`Entre o elemento a${linha}${i+1} -> `))
-		linhas.push(linhaInput)
-	} 
-	linha++
-	return linhas
+for(i = 0; i < linhas; i++) {
+	matriz[i] = []
+	for(j = 0; j < colunas; j++) { matriz[i][j] = Number(input(`Entre o valor da posição a${i+1}${j+1} -> `)) }
 }
 
-while(count < 5 ) {
-	switch(count) {
-		case(0):
-			linhas1 = setLinhas(linhas1)	
-			count++
-		case(1):
-			linhas2 = setLinhas(linhas2)	
-			count++
-		case(2):
-			linhas3 = setLinhas(linhas3)
-			count++
-		case(3):
-			linhas4 = setLinhas(linhas4)
-			count++
-		case(4):
-			linhas5 = setLinhas(linhas5)
-			count++
-		case(5):
-			break
-	}
+
+/* Letra a) */ console.log(matriz)
+
+/* Letra b) */
+let flattenedMatriz = [].concat(...matriz) // amassando o array para poder reduzir
+let soma = flattenedMatriz.reduce((a, b) => a + b, 0) // reduzindo o array
+console.log(`A soma de todos os elementos é ${soma}`) // imprimindo a soma
+
+/* Letra c) */
+let somaLinha = 0
+for(i = 0; i < colunas; i++) {
+	somaLinha += matriz[linhaParaSomar][i]
 }
+console.log(`A soma da linha ${linhaParaSomar+1} é ${somaLinha}`)
 
- matriz = [
- 	[linhas1[0],  linhas1[1], linhas1[2], linhas1[3], linhas1[4] ],
- 	[linhas2[0],  linhas2[1], linhas2[2], linhas2[3], linhas2[4]],
- 	[linhas3[0],  linhas3[1], linhas3[2], linhas3[3], linhas3[4]],
- 	[linhas4[0],  linhas4[1], linhas4[2], linhas4[3], linhas4[4]],
- 	[linhas5[0],  linhas5[1], linhas5[2], linhas5[3], linhas5[4]]
- ]
+/* Letra d) */
+let somaColuna = 0
+for(i = 0; i < linhas; i++) {
+	somaColuna += matriz[i][colunaParaSomar]
+}
+console.log(`A soma da coluna ${colunaParaSomar+1} é ${somaColuna}`)
 
-console.log(matriz)
+/* letra e) */
+let diagonalPrincipal = 0
+for(i = 0; i < linhas; i++) {
+	diagonalPrincipal += matriz[i][i]
+}
+console.log(`A soma da diagonal principal é: ${diagonalPrincipal}`)
+
+/* letra f) */
+let diagonalSecundaria = 0
+for(let i = 0; i < matriz.length; i++){
+	diagonalSecundaria += matriz[matriz.length -1 - i][i]
+}
+console.log(`A soma da diagonal secundária é: ${diagonalSecundaria}`)
