@@ -1,0 +1,111 @@
+\documentclass[11pt]{article}
+
+\newcommand{\numpy}{{\tt numpy}}    % tt font for numpy
+
+\usepackage{enumitem}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+\date{}
+
+\begin{document}
+
+% ========== Edit your name here
+\author{Pedro Martins Pereira - 2124290019}
+\title{Trabalho 01 - Lógica de Programação}
+\maketitle
+
+\medskip
+
+\begin{enumerate}
+
+\item
+	
+
+	Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+		\item \addtocounter{enumii}{0}
+		\item 34857 é um literal do tipo number.
+		\item "true" é um lietral do tipo string.
+		\item false é do tipo boolean.
+		\item "304958" é um literal do tipo string.
+		\item -2343 é um literal do tipo number.
+		\item "23/12/99" é um literal do tipo string. 		  \item true é um lietral do tipo boolean.
+		\item "NOME" é um lietral do tipo string
+		\item 0.5 é um literal do tipo number.
+		\item NOME, por não estar entre aspas não está definido e causará o programa a ser interrompido com uma excessão caso seja executado. 
+		\item 'i' é um literal do tipo string. 
+  	\end{enumerate}
+
+\item Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+		\item \addtocounter{enumii}{0}
+		\item string, já que podem ocorrer zeros à direita.
+		\item string, já que podem ocorrer zeros à direita. 
+		\item boolean.
+		\item number.
+		\item string.
+  	\end{enumerate}
+
+
+\item Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+  		\item Não, já que um placa de automóvel é composta por letras e números. Além disso placas de automóveis podem ter zeros à esquerda, os quais são ignorados em tipos numéricos.
+  		\item Falso, variáveis do tipo string podem conter quaisquer caracteres da tabela ascii, numerais e até mesmo caracteres unicode.
+  		\item Verdadeiro. true e false são os dois valores booleanos disponíveis em JavaScript e representam as constantes lógicas da lógica clássica ou álgebra de boole. 
+  		\item 
+	\end{enumerate}
+
+\item 
+	Prove a validade do argumento seguinte usando regras de inferência (se necessário utilize também as de equivalência).
+	\begin{itemize}
+		\item Gabriel estuda ou não está cansado.
+		\item Se Gabriel estuda, então dorme tarde.
+		\item Gabriel não dorme tarde ou está cansado. 
+	\end{itemize}
+	Portanto, Gabriel está cansado se, e somente se estuda (conclusão).
+
+	Resposta:
+
+	Considere que "Gabriel estuda" seja representado por $\varphi$ e "Gabriel está cansado" por $\psi$. Considere também que "Gabriel dorme tarde" seja $\chi$.   
+
+	Então o argumento tem a seguinte forma:
+	\begin{enumerate}[label=\roman*]
+  		\item $\varphi \vee \neg \psi$ 
+  		\item $\varphi \rightarrow \chi$
+  		\item $\neg \chi \vee \psi$ 
+		\item $\models \psi \leftrightarrow \varphi$ 
+	\end{enumerate}
+
+	Faltam passos que determiem a conclusão, transformando em uma dedução correta:
+
+	\begin{enumerate}[label=\roman*]
+  		\item $\varphi \rightarrow \chi$ \textit{premissa}
+  		\item $\neg \chi \vee \psi$ \textit{premissa}
+  		\item $\chi \rightarrow \psi $ \textit{De Morgan}
+  		\item $\varphi \rightarrow  \psi$ \textit{transitividade}
+  		\item $\neg \psi \rightarrow  \neg \varphi$ \textit{contrapositiva}
+  		\item $\neg\neg \psi \rightarrow  \neg\neg \varphi$ \textit{inversa}
+  		\item $\psi \rightarrow  \varphi$ \textit{eliminação da dupla negação}
+		\item $\models \psi \leftrightarrow \varphi$  \textit{conjunção iv, vii} 
+	\end{enumerate}
+
+\item Utilize as regras de equivalência e encontre a opção correta. \smallskip 
+	Dizer que: Pedro não é pedreiro ou Paulo é paulista. É do ponto de vista lógico, o mesmo que dizer que:\smallskip
+
+	Resposta:
+	Se Pedro é pedreiro, então Paulo é paulista.
+
+\end{enumerate}
+
+\end{document}
+\grid
+\grid
+
+

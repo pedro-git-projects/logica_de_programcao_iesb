@@ -1,0 +1,105 @@
+\documentclass[11pt]{article}
+
+\newcommand{\numpy}{{\tt numpy}}    % tt font for numpy
+
+\usepackage{enumitem}
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+\date{}
+
+\begin{document}
+
+% ========== Edit your name here
+\author{Pedro Martins Pereira - 2124290019}
+\title{ADS 1A: Fundamentos de Lógica, Fórum 1}
+\maketitle
+
+\medskip
+
+\begin{enumerate}
+
+\item
+	Sabendo que o valor lógico da proposição $p$ é verdadeiro e que o valor lógico da proposição $q$ é falsa, determine o valor lógico da seguinte fórmula $P$:
+
+	$P: \neg(p \vee q) \leftrightarrow p \wedge q$
+
+	Resposta:
+
+	\begin{enumerate}[label=(\roman*)]
+  		\item $p \vee q$ é verdadeiro, portanto
+  		\item $\neg(p \vee q)$ é falso
+  		\item $p\wedge q$ é falso, logo 
+		\item $P: \neg(p \vee q) \leftrightarrow p \wedge q$ é verdadeiro
+	\end{enumerate}
+
+	Note, entretanto, que esta fórmula é verdadeira apenas para essa interpretação, ou linha da tabela verdade, não sendo válida, isto é verdadeira em todas interpretações.
+
+\item
+	Classifique as fórmulas abaixo como tatuologias, satisfatívies ou contraditórias:
+	\begin{enumerate}[label=(\alph*)]
+  		\item $(p \rightarrow q) \wedge (q \rightarrow r) \rightarrow (p \rightarrow r)$ 
+  		\item $((p \wedge q)\rightarrow r) \leftrightarrow ((p \wedge \neg r)\rightarrow \neg q)$
+  		\item $(p \rightarrow(q \rightarrow r))\rightarrow ((p \wedge q)\rightarrow r)$
+  		\item $(p \rightarrow q) \leftrightarrow (\neg p \rightarrow \neg q)$
+	\end{enumerate}
+
+	Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+  		\item Tautologia 
+  		\item Tautologia
+  		\item Tautologia 
+  		\item Satisftatível
+	\end{enumerate}
+
+\item 
+	Prove a validade do argumento seguinte usando regras de inferência (se necessário utilize também as de equivalência).
+	\begin{itemize}
+		\item Gabriel estuda ou não está cansado.
+		\item Se Gabriel estuda, então dorme tarde.
+		\item Gabriel não dorme tarde ou está cansado. 
+	\end{itemize}
+	Portanto, Gabriel está cansado se, e somente se estuda (conclusão).
+
+	Resposta:
+
+	Considere que "Gabriel estuda" seja representado por $\varphi$ e "Gabriel está cansado" por $\psi$. Considere também que "Gabriel dorme tarde" seja $\chi$.   
+
+	Então o argumento tem a seguinte forma:
+	\begin{enumerate}[label=\roman*]
+  		\item $\varphi \vee \neg \psi$ 
+  		\item $\varphi \rightarrow \chi$
+  		\item $\neg \chi \vee \psi$ 
+		\item $\models \psi \leftrightarrow \varphi$ 
+	\end{enumerate}
+
+	Faltam passos que determiem a conclusão, transformando em uma dedução correta:
+
+	\begin{enumerate}[label=\roman*]
+  		\item $\varphi \rightarrow \chi$ \textit{premissa}
+  		\item $\neg \chi \vee \psi$ \textit{premissa}
+  		\item $\chi \rightarrow \psi $ \textit{De Morgan}
+  		\item $\varphi \rightarrow  \psi$ \textit{transitividade}
+  		\item $\neg \psi \rightarrow  \neg \varphi$ \textit{contrapositiva}
+  		\item $\neg\neg \psi \rightarrow  \neg\neg \varphi$ \textit{inversa}
+  		\item $\psi \rightarrow  \varphi$ \textit{eliminação da dupla negação}
+		\item $\models \psi \leftrightarrow \varphi$  \textit{conjunção iv, vii} 
+	\end{enumerate}
+
+\item Utilize as regras de equivalência e encontre a opção correta. \smallskip 
+	Dizer que: Pedro não é pedreiro ou Paulo é paulista. É do ponto de vista lógico, o mesmo que dizer que:\smallskip
+
+	Resposta:
+	Se Pedro é pedreiro, então Paulo é paulista.
+
+\end{enumerate}
+
+\end{document}
+\grid
+\grid
+
+

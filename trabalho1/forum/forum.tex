@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+
+\newcommand{\numpy}{{\tt numpy}}    % tt font for numpy
+
+\usepackage{enumitem}
+
+\usepackage{listings} %code highlighter
+\usepackage{color} %use color
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+ 
+%Customize a bit the look
+\lstset{ %
+backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize, % the size of the fonts that are used for the code
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+breaklines=true, % sets automatic line breaking
+captionpos=b, % sets the caption-position to bottom
+commentstyle=\color{mygreen}, % comment style
+deletekeywords={...}, % if you want to delete keywords from the given language
+escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+frame=single, % adds a frame around the code
+keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{blue}, % keyword style
+% language=Octave, % the language of the code
+morekeywords={*,...}, % if you want to add more keywords to the set
+numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+numbersep=5pt, % how far the line-numbers are from the code
+numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+showstringspaces=false, % underline spaces within strings only
+showtabs=false, % show tabs within strings adding particular underscores
+stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mymauve}, % string literal style
+tabsize=2, % sets default tabsize to 2 spaces
+title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%END of listing package%
+ 
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.35, 0.3, 0.82}
+ 
+%define Javascript language
+\lstdefinelanguage{JavaScript}{
+keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+keywordstyle=\color{blue}\bfseries,
+ndkeywords={class, export, boolean, throw, implements, import, this},
+ndkeywordstyle=\color{darkgray}\bfseries,
+identifierstyle=\color{black},
+sensitive=false,
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+commentstyle=\color{purple}\ttfamily,
+stringstyle=\color{red}\ttfamily,
+morestring=[b]',
+morestring=[b]"
+}
+ 
+\lstset{
+language=JavaScript,
+extendedchars=true,
+basicstyle=\footnotesize\ttfamily,
+showstringspaces=false,
+showspaces=false,
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=9pt,
+tabsize=2,
+breaklines=true,
+showtabs=false,
+captionpos=b
+}
+
+
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+\date{}
+
+\begin{document}
+
+% ========== Edit your name here
+\author{Pedro Martins Pereira - 2124290019}
+\title{Trabalho 01 - Lógica de Programação}
+\maketitle
+
+\medskip
+
+\begin{enumerate}
+
+\item
+	
+
+	Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+		\item \addtocounter{enumii}{0}
+		\item 34857 é um literal do tipo number.
+		\item "true" é um lietral do tipo string.
+		\item false é do tipo boolean.
+		\item "304958" é um literal do tipo string.
+		\item -2343 é um literal do tipo number.
+		\item "23/12/99" é um literal do tipo string. 		  \item true é um lietral do tipo boolean.
+		\item "NOME" é um lietral do tipo string
+		\item 0.5 é um literal do tipo number.
+		\item NOME, por não estar entre aspas não está definido e causará o programa a ser interrompido com uma excessão caso seja executado. 
+		\item 'i' é um literal do tipo string. 
+  	\end{enumerate}
+
+\item Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+		\item \addtocounter{enumii}{0}
+		\item string, já que podem ocorrer zeros à esquerda.
+		\item string, já que podem ocorrer zeros à esquerda. 
+		\item boolean.
+		\item number.
+		\item string.
+  	\end{enumerate}
+
+
+\item Resposta:
+
+	\begin{enumerate}[label=(\alph*)]
+  		\item Não, já que um placa de automóvel é composta por letras e números. Além disso placas de automóveis podem ter zeros à esquerda, os quais são ignorados em tipos numéricos.
+  		\item Falso, variáveis do tipo string podem conter quaisquer caracteres da tabela ascii, numerais e até mesmo caracteres unicode.
+  		\item Verdadeiro. true e false são os dois valores booleanos disponíveis em JavaScript e representam as constantes lógicas da lógica clássica ou álgebra de boole. 
+  		\item 
+	\end{enumerate}
+
+\item Resposta: 
+
+(b)
+\begin{lstlisting}[language=JavaScript]
+let carro = {
+	placa: "JDR0312",
+	marca: "Toyota",
+	modelo: "Supra" ,
+	ano: 1995,
+	precoFIPE: 32_735.00,
+	disponivel: true
+}
+\end{lstlisting}
+
+(c)
+\begin{lstlisting}[language=JavaScript]
+let  musica = {
+	titulo:  "Portrait of Tracy",
+	artistas: ['Jaco Pastorius'],
+	generos: ['Jazz', 'Funk', 'Soul'],
+	duracaoMinutos: 2.23
+}
+
+let artista = {
+	nome: "Jaco Pastorius",
+	musicas: ['Donna Lee', 'Continuum', 'Opus Pocus', 'Punk Jazz']
+	generos: ['Jazz', 'Funk', 'Soul']
+}
+
+let colecao = {
+	artistas = ['Jaco Pastorius', 'Victor Wooten', 'Ray Brown', 'Charles Mingus'],
+	numeroDeAlbums = 45
+}
+\end{lstlisting}
+
+
+(d)
+\begin{lstlisting}[language=JavaScript]
+let disciplina = {
+	nome: "Logica de Programacao"
+	professor: "Michel",
+	alunos: [Pedro, Joao, Maria, Gustavo]
+	mediaMinima: 5
+} 
+
+let coordenador = "Marcelo"
+let linguagensDeProgramacao = ['JavaScript', 'HTML']
+\end{lstlisting}
+
+\newpage
+
+(e)
+\begin{lstlisting}[language=JavaScript]
+let carrinhoDeCompras = ['Thinkpad', 'Camiseta Vermelha', 'Switch de Rede']
+let cliente = {
+	nome: "Richard Stallman",
+	carrinho: carrinhoDeCompras, 
+	cpf: "486.842.680-08"
+}
+\end{lstlisting}
+
+
+
+\end{enumerate}
+\end{document}
+\grid
+\grid
+
+

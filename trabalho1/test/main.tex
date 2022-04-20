@@ -1,0 +1,178 @@
+\documentclass{scrreprt}
+\makeatother
+%Define the listing package
+\usepackage{listings} %code highlighter
+\usepackage{color} %use color
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+ 
+%Customize a bit the look
+\lstset{ %
+backgroundcolor=\color{white}, % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize, % the size of the fonts that are used for the code
+breakatwhitespace=false, % sets if automatic breaks should only happen at whitespace
+breaklines=true, % sets automatic line breaking
+captionpos=b, % sets the caption-position to bottom
+commentstyle=\color{mygreen}, % comment style
+deletekeywords={...}, % if you want to delete keywords from the given language
+escapeinside={\%*}{*)}, % if you want to add LaTeX within your code
+extendedchars=true, % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+frame=single, % adds a frame around the code
+keepspaces=true, % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+keywordstyle=\color{blue}, % keyword style
+% language=Octave, % the language of the code
+morekeywords={*,...}, % if you want to add more keywords to the set
+numbers=left, % where to put the line-numbers; possible values are (none, left, right)
+numbersep=5pt, % how far the line-numbers are from the code
+numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+rulecolor=\color{black}, % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+showspaces=false, % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+showstringspaces=false, % underline spaces within strings only
+showtabs=false, % show tabs within strings adding particular underscores
+stepnumber=1, % the step between two line-numbers. If it's 1, each line will be numbered
+stringstyle=\color{mymauve}, % string literal style
+tabsize=2, % sets default tabsize to 2 spaces
+title=\lstname % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+%END of listing package%
+ 
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.35, 0.3, 0.82}
+ 
+%define Javascript language
+\lstdefinelanguage{JavaScript}{
+keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+keywordstyle=\color{blue}\bfseries,
+ndkeywords={class, export, boolean, throw, implements, import, this},
+ndkeywordstyle=\color{darkgray}\bfseries,
+identifierstyle=\color{black},
+sensitive=false,
+comment=[l]{//},
+morecomment=[s]{/*}{*/},
+commentstyle=\color{purple}\ttfamily,
+stringstyle=\color{red}\ttfamily,
+morestring=[b]',
+morestring=[b]"
+}
+ 
+\lstset{
+language=JavaScript,
+extendedchars=true,
+basicstyle=\footnotesize\ttfamily,
+showstringspaces=false,
+showspaces=false,
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=9pt,
+tabsize=2,
+breaklines=true,
+showtabs=false,
+captionpos=b
+}
+
+\makeatother
+\begin{document}
+\begin{lstlisting}[language=JavaScript]
+/******************** EXERCICIO 5 **************************/
+/* a. */console.log(Math.sqrt((45*2-30/5-8),2.0)) // 8.717797887081348
+/* b. */console.log(Math.pow(-3, 3)) // -27 
+/* c. */console.log(27 - Math.pow(3, 4)) // -54 
+/* d. */console.log(70 - (50/2)*5*3) // -305
+/* e. */console.log(Math.round(Math.pow(-70.75, 4))) // 25055656 
+
+/******************** EXERCICIO 6 **************************/
+let A,B,C,D,E
+
+A = 20 // => 20
+
+B = (40 + A)/3 
+/* => (20 + 20) -> 70 
+ * 70/3 -> 20 */
+
+C = Math.sqrt((A + 80), 2.0)
+/* => 20 + 80 -> 100
+ * => sqrt(100,2.0) -> 10
+ * */
+
+D = (A >= B) // => (20 >= 20) -> true
+
+E = (C == B) // => (10 == 20) -> false
+
+console.log(A, " ", " ", B, " ", C, " ", D, " ", E)
+
+
+/******************** EXERCICIO 7 **************************/
+
+/* a. */ console.log("mario" == "maria") // false
+/* b. */ console.log(2 + 4 == 6) // true
+/* c. */ console.log(10 - 4 > 7) // false
+/* d. */ console.log((2*3)>(3*2)) // false
+/* e. */ console.log(!('a' > 'A')) // ????
+
+/* Resultado: false, true, false, false, false */
+
+
+/******************** EXERCICIO 8 **************************/
+
+function retornaMaiorNumero(n1, n2, n3) {
+	return Math.max(n1, n2, n3)
+}
+
+const input1 = require('prompt-sync')({sigint:true})
+const input2 = require('prompt-sync')({sigint:true})
+const input3 = require('prompt-sync')({sigint:true})
+
+const num1 = input1("Insira o primeiro numero ")
+const num2 = input2("Insira o segundo numero ")
+const num3 = input3("Insira o terceiro numero ")
+
+console.log(num1, num2, num3)
+
+console.log("O maior numero e ", retornaMaiorNumero(num1, num2, num3))
+
+
+
+/******************** EXERCICIO 9 **************************/
+
+let myArray = [3, 12, 4, 15, 1 , 2, 7, 8]
+
+function imprimeDoisMaiores(array) { 
+	var max = Math.max.apply(null, array) /* Encontrando o maior elemento */ 
+	console.log("Maior elemento:", max)
+
+	array.splice(array.indexOf(max), 1) /* Excluindo o maior elemento do array */ 
+
+	console.log("Segundo maior elemento:", Math.max.apply(null, array)) /* Encontrando e imprimindo o proximo maior */ 
+}
+
+imprimeDoisMaiores(myArray)
+
+
+/******************** EXERCICIO 10 **************************/
+
+const ateFicarMaior = (altura1, taxaDeCrescimento1, altura2, taxaDeCrescimento2) => {
+	let ano = 0
+	for (ano = 0; altura2 <= altura1; ano++) {
+		altura1 += taxaDeCrescimento1
+		altura2 += taxaDeCrescimento2
+	}
+	return ano
+}
+
+let anacleto = {
+	alturaCM: 150,
+	taxaDeCrescimentoAno: 2 
+}
+
+let felisberto = {
+	alturaCM: 110,
+	taxaDeCrescimentoAno: 3 
+}
+
+
+let passou = ateFicarMaior(anacleto.alturaCM, anacleto.taxaDeCrescimentoAno, felisberto.alturaCM, felisberto.taxaDeCrescimentoAno)
+
+console.log("Anacleto passara Felisberto apos " + passou + " anos, estando com 2m33cm e seu irmao com 2m32cm!")
+\end{lstlisting}
+\end{document}
